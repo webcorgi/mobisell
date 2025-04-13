@@ -24,6 +24,7 @@
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./js/script.js"></script>
     </head>
     <body class="wrapper" id="wrapper">
         <header class="header-container">
@@ -85,7 +86,7 @@
                             <span class="number">1</span>
                             <span class="border-status"></span>
                         </div>
-                        <p>삼담신청</p>
+                        <p>상담신청</p>
                     </li>
                     <li class="item">
                         <div class="top">
@@ -125,16 +126,18 @@
 
         <section class="consultation-form">
             <div class="container">
-                <div>
-                    <a href="javascript:;">세무 서비스 이용 요금 안내</a>
-                </div>
+                <a href="javascript:;" class="link-serviceinfo">
+                    <img src="./img/stamp.png" alt="stemp">
+                    <span>세무 서비스 이용 요금 안내</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
                 <div class="text-center pt-3">
                     <h4> ※ 본 상담은 서비스 가입 관련 문의에 한해 제공됩니다.
                     </h4>
                 </div>
                 <form class="consultation-form-content">
                     <div class="form-group">
-                        <label class="label-text">모바일 ID</label>
+                        <label class="label-text">모비셀 ID</label>
                         <input type="text" class="form-control" placeholder="아이디">
                     </div>
                     <div class="form-group">
@@ -163,9 +166,33 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>개인정보 3개 계정에 대한 동의</label>
+                        <label class="label-text">상담 받으실 연락처</label>
+                        <input type="text" class="form-control" placeholder="연락처 입력">
+                    </div>
+                    <div class="form-group">
+                        <label class="d-flex justify-content-between align-items-center">
+                            <span>개인정보 3개 계정에 대한 동의</span>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="agreeAll">
+                                <label class="form-check-label" for="agreeAll">모두 동의합니다</label>
+                            </div>
+                        </label>
                         <div class="terms-box">
-                            <textarea class="form-control" readonly></textarea>
+                            <textarea class="form-control" readonly>1. 개인정보 수집 및 이용 목적
+본 사이트는 세무 서비스 상담 신청 목적으로 개인정보를 수집하고 있습니다.
+수집된 개인정보는 서비스 가입 절차 진행 및 세무 관련 상담에만 사용됩니다.
+
+2. 수집하는 개인정보 항목
+- 필수항목: 아이디, 상호, 대표자명, 사업자등록번호, 이메일
+- 선택항목: 없음
+
+3. 개인정보의 보유 및 이용기간
+회원 탈퇴 시 또는 개인정보 수집 이용 목적 달성 시까지 보관됩니다.
+단, 관계 법령에 의해 보존할 필요가 있는 경우 해당 법령에서 요구하는 기간 동안 보관됩니다.
+
+4. 개인정보의 파기절차 및 방법
+보유기간이 경과하거나 처리목적이 달성된 개인정보는 지체 없이 파기합니다.
+전자적 파일 형태인 경우 복구 및 재생되지 않도록 안전하게 삭제하며, 그 외의 기록물은 분쇄하거나 소각합니다.</textarea>
                         </div>
                         <div class="terms-agree group-button">
                             <button type="submit" class="btn btn-next">상담신청하기</button>
