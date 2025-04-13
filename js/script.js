@@ -5,21 +5,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const emailDomain = document.querySelector('.email-input input[placeholder="직접입력"]');
     
     // 이메일 선택 변경 이벤트 리스너
-    emailSelect.addEventListener('change', function() {
-        const selectedValue = this.value;
-        
-        // "선택" 옵션이 아닌 경우에만 도메인 입력 필드에 반영
-        if (selectedValue !== '선택') {
-            emailDomain.value = selectedValue;
-            emailDomain.setAttribute('readonly', true);
-            emailDomain.style.backgroundColor = '#f8f9fa';
-        } else {
-            // "선택" 옵션인 경우 입력 필드 초기화
-            emailDomain.value = '';
-            emailDomain.removeAttribute('readonly');
-            emailDomain.style.backgroundColor = '';
-        }
-    });
+    if (emailSelect) {
+        emailSelect.addEventListener('change', function() {
+            const selectedValue = this.value;
+            
+            // "선택" 옵션이 아닌 경우에만 도메인 입력 필드에 반영
+            if (selectedValue !== '선택') {
+                emailDomain.value = selectedValue;
+                emailDomain.setAttribute('readonly', true);
+                emailDomain.style.backgroundColor = '#f8f9fa';
+            } else {
+                // "선택" 옵션인 경우 입력 필드 초기화
+                emailDomain.value = '';
+                emailDomain.removeAttribute('readonly');
+                emailDomain.style.backgroundColor = '';
+            }
+        });
+    }
     
     // 탭 버튼 기능
     const serviceTypeInputs = document.querySelectorAll('input[name="serviceType"]');
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const idCardDelete = document.getElementById('idCardDelete');
     
     // 미리보기 모달 관련 요소
-    const filePreviewModal = new bootstrap.Modal(document.getElementById('filePreviewModal'));
+    const filePreviewModal = document.getElementById('filePreviewModal') ? new bootstrap.Modal(document.getElementById('filePreviewModal')) : null;
     const filePreviewLarge = document.getElementById('filePreviewLarge');
     const filePreviewModalTitle = document.getElementById('filePreviewModalTitle');
     
@@ -246,13 +248,33 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 동의 체크박스 기능
     const agreeAllCheckbox = document.getElementById('agreeAll');
-    const btnSubmit = document.getElementById('btnSubmit');
     
-    // 약관 동의 알림 모달
-    const agreementAlertModal = new bootstrap.Modal(document.getElementById('agreementAlertModal'), {
-        backdrop: 'static',
-        keyboard: false
-    });
+    // 약관동의 모달
+    const agreementAlertModal = document.getElementById('agreementAlertModal') ? new bootstrap.Modal(document.getElementById('agreementAlertModal')) : null;
+    
+    // 상담신청 버튼 클릭 이벤트
+    const btnSubmit = document.getElementById('btnSubmit');
+    const btnNext = document.querySelector('.btn.btn-next');  // step1.html의 상담신청하기 버튼
+    
+    // step3.html의 상담신청 버튼
+    if (btnSubmit) {
+        btnSubmit.addEventListener('click', function(e) {
+            if (!agreeAllCheckbox.checked) {
+                e.preventDefault();
+                agreementAlertModal.show();
+            }
+        });
+    }
+    
+    // step1.html의 상담신청 버튼
+    if (btnNext && !btnSubmit) {
+        btnNext.addEventListener('click', function(e) {
+            if (!agreeAllCheckbox.checked) {
+                e.preventDefault();
+                agreementAlertModal.show();
+            }
+        });
+    }
     
     // 모달이 열릴 때 이벤트 - 정중앙 배치
     document.getElementById('agreementAlertModal').addEventListener('shown.bs.modal', function () {
@@ -270,22 +292,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (agreeAllCheckbox) {
         agreeAllCheckbox.addEventListener('change', function() {
             // 추후 개별 동의 체크박스 추가 시 활용
-        });
-    }
-    
-    // 상담신청하기 버튼 클릭 이벤트
-    if (btnSubmit) {
-        btnSubmit.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // 약관 동의 체크 여부 확인
-            if (!agreeAllCheckbox.checked) {
-                // 체크되지 않은 경우 알림 모달 표시
-                agreementAlertModal.show();
-            } else {
-                // 체크된 경우 폼 제출
-                document.querySelector('form.consultation-form-content').submit();
-            }
         });
     }
 }); 

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>MOBESELL</title>
 
         <link
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&amp;display=swap"
@@ -195,11 +195,30 @@
 전자적 파일 형태인 경우 복구 및 재생되지 않도록 안전하게 삭제하며, 그 외의 기록물은 분쇄하거나 소각합니다.</textarea>
                         </div>
                         <div class="terms-agree group-button">
-                            <button type="submit" class="btn btn-next">상담신청하기</button>
+                            <button type="button" class="btn btn-next">상담신청하기</button>
                         </div>
                     </div>
                 </form>
             </div>
         </section>
+
+
+         <!-- 약관 동의 알림 모달 -->
+         <div class="modal fade" id="agreementAlertModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-0">
+                        <div class="agreement-alert-box">
+                            <div class="agreement-alert-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <p class="agreement-alert-text">서비스 가입 약관 동의 후 진행 가능합니다.</p>
+                            <button type="button" class="btn btn-agreement-confirm" data-bs-dismiss="modal">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </body>
 </html>
