@@ -138,19 +138,19 @@
                 <form class="consultation-form-content">
                     <div class="form-group">
                         <label class="label-text">모비셀 ID</label>
-                        <input type="text" class="form-control" placeholder="아이디">
+                        <input type="text" class="form-control" placeholder="아이디" readonly value="mobi_user123">
                     </div>
                     <div class="form-group">
                         <label class="label-text">상호</label>
-                        <input type="text" class="form-control" placeholder="상호">
+                        <input type="text" class="form-control" placeholder="상호" readonly value="모비셀 테크">
                     </div>
                     <div class="form-group">
                         <label class="label-text">대표자명</label>
-                        <input type="text" class="form-control" placeholder="대표자명">
+                        <input type="text" class="form-control" placeholder="대표자명" readonly value="홍길동">
                     </div>
                     <div class="form-group">
                         <label class="label-text">사업자등록번호</label>
-                        <input type="text" class="form-control" placeholder="사업자등록번호">
+                        <input type="text" class="form-control" placeholder="사업자등록번호" readonly value="123-45-67890">
                     </div>
                     <div class="form-group">
                         <label class="label-text">계산서이메일</label>
@@ -166,19 +166,19 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="label-text">상담 받으실 연락처</label>
-                        <input type="text" class="form-control" placeholder="연락처 입력">
+                        <label class="label-text important-label"><i class="fas fa-phone-alt me-2"></i>상담 받으실 연락처<span class="text-danger ms-1">*</span></label>
+                        <input type="text" class="form-control highlight-input" placeholder="연락처 입력">
                     </div>
                     <div class="form-group">
                         <label class="d-flex justify-content-between align-items-center">
-                            <span>개인정보 3개 계정에 대한 동의</span>
+                            <span class="important-label"><i class="fas fa-file-signature me-2"></i>개인정보 3제 제공에 대한 동의<span class="text-danger ms-1">*</span></span>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="agreeAll">
+                                <input class="form-check-input highlight-input" type="checkbox" id="agreeAll">
                                 <label class="form-check-label" for="agreeAll">모두 동의합니다</label>
                             </div>
                         </label>
                         <div class="terms-box">
-                            <textarea class="form-control" readonly>1. 개인정보 수집 및 이용 목적
+                            <textarea class="form-control highlight-input" readonly>1. 개인정보 수집 및 이용 목적
 본 사이트는 세무 서비스 상담 신청 목적으로 개인정보를 수집하고 있습니다.
 수집된 개인정보는 서비스 가입 절차 진행 및 세무 관련 상담에만 사용됩니다.
 

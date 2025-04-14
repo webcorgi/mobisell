@@ -327,11 +327,12 @@
 
 /* 파일 미리보기 관련 스타일 */
 .file-preview-container {
-    margin-top: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 15px;
+    padding: 5px;
     background-color: #f9f9f9;
+    height:47px;
+    margin-bottom:8px;
 }
 
 .file-preview-content {
@@ -341,8 +342,8 @@
 }
 
 .file-thumbnail {
-    width: 100px;
-    height: 100px;
+    width: 35px;
+    height: 35px;
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
@@ -370,7 +371,7 @@
 .file-info {
     flex: 1;
     display: flex;
-    flex-direction: column;
+    align-items:center;
     gap: 10px;
 }
 
@@ -578,22 +579,8 @@
 
 .btn-completion-action {
     display: inline-block;
-    background-color: #2F8BFF;
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 12px 40px;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(47, 139, 255, 0.2);
-}
-
-.btn-completion-action:hover {
-    background-color: #0066EE;
-    box-shadow: 0 6px 15px rgba(47, 139, 255, 0.3);
-    color: white;
-    transform: translateY(-2px);
+    color: #2F8BFF;
+    text-decoration: underline;
 }
 
 .btn-back-home {
@@ -765,6 +752,7 @@ body {
     line-height: 1.6;
     position: relative;
     padding-left: 20px;
+    list-style: none;
 }
 
 .fee-notes li:before {
@@ -778,80 +766,41 @@ body {
     background-color: var(--primary-color);
 }
 
-.company-info {
-    margin-top: 40px;
-    padding: 35px;
-    background-color: var(--light-gray);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-sm);
-    position: relative;
-    overflow: hidden;
-    animation: fadeInUp 1s ease-in-out;
-}
-
-.company-info:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 150px;
-    height: 150px;
-    background: linear-gradient(135deg, var(--primary-light) 0%, transparent 100%);
-    opacity: 0.2;
-    border-radius: 0 0 0 100%;
-}
-
-.company-info h3 {
-    font-size: 22px;
-    margin-bottom: 25px;
-    font-weight: 700;
-    color: var(--primary-dark);
-    position: relative;
+/* 안세회계법인 배너 스타일 */
+.accounting-firm-banner {
+    background-color: #0066a3;
+    border-radius: 50px;
+    padding: 15px 30px;
+    text-align: center;
+    margin: 20px auto 40px;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     display: inline-block;
-    padding-bottom: 10px;
 }
 
-.company-info h3:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 3px;
-    background-color: var(--primary-color);
-    border-radius: 1.5px;
+.accounting-firm-logo {
+    max-width: 100%;
+    height: auto;
 }
 
 .company-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 20px;
+    padding:20px 50px;
+    max-width:760px;
+    margin:0 auto;
 }
 
 .feature-item {
-    background-color: white;
-    padding: 22px;
-    border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    transition: var(--transition);
-    border-left: 3px solid var(--primary-color);
-}
-
-.feature-item:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-3px);
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:20px;
+    padding:10px 20px;
 }
 
 .feature-title {
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 8px;
+    color:#fff;
+    min-width:80px;
+    font-weight:bold;
 }
 
 .feature-content {
@@ -861,30 +810,22 @@ body {
 }
 
 .feature-number {
-    width: 30px;
-    height: 30px;
-    background-color: var(--primary-color);
+    width: 24px;
+    height: 24px;
+    background-color: #b5b7b6;
     color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
-    font-size: 14px;
     flex-shrink: 0;
-    box-shadow: 0 2px 4px rgba(47, 139, 255, 0.3);
 }
 
 .feature-text {
-    font-size: 15px;
-    color: var(--text-color);
+    color: #fff;
     line-height: 1.5;
 }
 
-.highlight {
-    color: var(--primary-color);
-    font-weight: 600;
-}
 
 /* 애니메이션 */
 @keyframes fadeIn {
@@ -974,4 +915,51 @@ body {
     .feature-item {
         padding: 15px;
     }
+}
+
+.important-label {
+    font-weight: 600 !important;
+    color: #086AEB !important;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.important-label i {
+    margin-right: 5px;
+    color: #086AEB;
+}
+
+.highlight-input {
+    border: 2px solid #2F8BFF !important;
+    box-shadow: 0 0 5px rgba(47, 139, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.highlight-input:focus {
+    box-shadow: 0 0 10px rgba(47, 139, 255, 0.5) !important;
+}
+.company-info {
+    background:#096b9c;
+    border-radius:20px;
+}
+.feature-label {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-right: 5px;
+    display: inline-block;
+    white-space: nowrap;
+}
+.company-info h3 {
+    padding:30px 5px 0; 
+    text-align:center;
+    margin:0 auto;
+}
+.company-info h3 img {
+    padding:10px 20px;
+    border-radius:200px;
+    border:10px solid #3c8bb7;
+    background:#fff;
+    max-width:410px;
 }
